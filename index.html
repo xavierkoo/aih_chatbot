@@ -1,70 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Full-Page TutorBot</title>
-    <!-- Dialogflow Messenger styles and script -->
-    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
-    <style>
-      /* Force the messenger to fill the entire page */
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-      }
-      /* The df-messenger element itself */
-      df-messenger {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 999; /* ensure it's on top if needed */
-        
-        /* Example color overrides (optional) */
-        --df-messenger-font-color: #000;
-        --df-messenger-font-family: "Google Sans", sans-serif;
-        --df-messenger-chat-background: #f3f6fc;
-        --df-messenger-user-message: #d3e3fd;
-        --df-messenger-bot-message: #fff;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TutorBot Chat</title>
+  <!-- The Dialogflow Messenger styles and script must be in the <head> or <body> -->
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css" />
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+</head>
+<body>
 
-      /* Expand the chat window to the full width/height when opened */
-      df-messenger .df-messenger-wrapper {
-        width: 100% !important;
-        height: 100% !important;
-        max-width: none !important;
-        max-height: none !important;
-      }
-      df-messenger .df-chat-wrapper {
-        width: 100% !important;
-        height: 100% !important;
-        max-width: none !important;
-        max-height: none !important;
-      }
+  <!-- Your website’s content here -->
 
-      /* Optionally hide the top title bar if you don’t want a minimize/close icon */
-      df-messenger .df-messenger-titlebar {
-        display: none;
-      }
-
-      /* Hide the bubble (chat-icon) if you don't want a bubble icon at all */
-      df-messenger .df-messenger-chat-icon {
-        display: none;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Full-page Dialogflow Messenger -->
-    <df-messenger
+  <df-messenger
+    location="asia-southeast1"
+    project-id="canvas-figure-448602-h0"
+    agent-id="dd616abe-f122-41f9-8dc1-e8cbd2803bf6"
+    language-code="en"
+    max-query-length="-1"
+  >
+    <df-messenger-chat-bubble
       chat-title="TutorBot"
-      agent-id="YOUR-AGENT-ID"
-      language-code="en"
-      location="asia-southeast1"
-      chat-icon=""  <!-- This removes the default chat bubble icon -->
     >
-    </df-messenger>
-  </body>
+    </df-messenger-chat-bubble>
+  </df-messenger>
+
+  <style>
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: "Google Sans", sans-serif;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+      bottom: 16px;
+      right: 16px;
+    }
+  </style>
+</body>
 </html>
