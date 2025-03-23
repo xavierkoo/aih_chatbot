@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TutorBot Chat</title>
+  <!-- The Dialogflow Messenger styles and script must be in the <head> or <body> -->
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css" />
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+</head>
+<body>
+
+  <!-- Your website’s content here -->
+
+  <df-messenger
+    location="asia-southeast1"
+    project-id="canvas-figure-448602-h0"
+    agent-id="dd616abe-f122-41f9-8dc1-e8cbd2803bf6"
+    language-code="en"
+    max-query-length="-1"
+  >
+    <df-messenger-chat-bubble
+      chat-title="TutorBot"
+    >
+    </df-messenger-chat-bubble>
+  </df-messenger>
+
+  <style>
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: "Google Sans", sans-serif;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+      bottom: 16px;
+      right: 16px;
+    }
+  </style>
+</body>
+</html>
